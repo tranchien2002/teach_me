@@ -1,0 +1,12 @@
+vi:
+  date_format: "%d/%m/%Y"
+  views:
+      layouts:
+        header:
+          signin: "Đăng nhập"
+          signout: "Đăng xuất"
+          profile: "Hồ sơ"
+          notification: "Thông báo"
+          vi: "Tiếng Việt"
+          en: "Tiếng Anh"
+          language: "Ngôn ngữ"

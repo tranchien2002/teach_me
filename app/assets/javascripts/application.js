@@ -15,7 +15,7 @@
 //= require i18n
 //= require i18n.js
 //= require i18n/translations
-//= require bootstrap
 //= require rails-ujs
 //= require turbolinks
+//= require bootstrap
 //= require_tree .
