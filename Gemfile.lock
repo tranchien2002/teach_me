@@ -92,6 +92,8 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.6.0)
+      devise (>= 4.4)
     dry-configurable (0.7.0)
       concurrent-ruby (~> 1.0)
     dry-container (0.6.0)
@@ -271,6 +273,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   config
   devise (~> 4.2)
+  devise-i18n
   faker!
   font-awesome-rails
   i18n
