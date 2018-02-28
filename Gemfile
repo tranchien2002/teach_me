@@ -29,6 +29,9 @@ gem "devise", "~> 4.2"
 gem "cancancan", "~> 1.15"
 gem "ransack", "~> 1.7"
 gem "devise-i18n"
+gem "omniauth"
+gem "omniauth-facebook"
+gem "figaro"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
