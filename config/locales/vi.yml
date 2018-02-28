@@ -70,3 +70,15 @@ vi:
 
       unlock:
         resend: "Gửi lại hướng dẫn mở khóa"
+    requests:
+          new:
+            bill: "Thù lao"
+            content: "Nội dung"
+            header: "Tiêu đề"
+            topic: "Chủ đề"
+            submit: "Tạo"
+  controllers:
+      requests:
+        create:
+          success: "Thành công"
+          form_fail: "Điền thông tin chưa chính xác"

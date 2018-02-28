@@ -10,7 +10,6 @@ en:
         vi: "Vietnamese"
         en: "English"
         language: "Language"
-
     users:
       confirmations:
         resend: "Resend confirmation instructions"
@@ -70,3 +69,15 @@ en:
 
       unlock:
         resend: "Resend unlock instructions"
+    requests:
+      new:
+        bill: "Bill"
+        content: "Content"
+        header: "Header"
+        topic: "Topic"
+        submit: "Submit"
+  controllers:
+    requests:
+      create:
+        success: "Success"
+        form_fail: "Your form is incorrect"
