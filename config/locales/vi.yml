@@ -10,66 +10,14 @@ vi:
         vi: "Tiếng Việt"
         en: "Tiếng Anh"
         language: "Ngôn ngữ"
-
     users:
-      confirmations:
-        resend: "Gửi lại hướng dẫn xác nhận"
-      mailers:
-        confirmations:
-          welcome: "Chào mừng"
-          guide: "Bạn có thể xác nhận email tài khoản của mình thông qua liên kết dưới đây:"
-          confirm: "Xác nhận tài khoản của tôi"
-        email_changed:
-          hello: "Xin chào"
-          contact1: "Chúng tôi đang liên hệ với bạn để thông báo cho bạn rằng email của bạn đang được thay đổi thành"
-          contact2: "Chúng tôi đang liên hệ với bạn để thông báo cho bạn rằng email của bạn đã được thay đổi thành"
-        password_change:
-          hello: "Xin chào"
-          contact: "Chúng tôi đang liên hệ với bạn để thông báo cho bạn rằng mật khẩu của bạn đã được thay đổi."
-        reset_password:
-          hello: "Xin chào"
-          guide: "Ai đó đã yêu cầu một liên kết để thay đổi mật khẩu của bạn. Bạn có thể thực hiện điều này thông qua liên kết bên dưới."
-          link: "Thay đổi mật khẩu của tôi"
-          descpt1: "Nếu bạn không yêu cầu điều này, vui lòng bỏ qua email này."
-          descpt2: "Mật khẩu của bạn sẽ không thay đổi cho đến khi bạn truy cập liên kết ở trên và tạo một mật khẩu mới."
-        unlock:
-          hello: "Xin chào"
-          descpt: "Tài khoản của bạn đã bị khoá do quá nhiều lần đăng nhập không thành công."
-          guide: "Nhấp vào liên kết bên dưới để mở khóa tài khoản của bạn:s"
-          link: "Mở khóa tài khoản của tôi"
-      password:
-        edit:
-          title: "Thay đổi mật khẩu của bạn"
-          new_password: "Mật khẩu mới"
-          confirm: "Xác nhận mật khẩu mới"
-          button: "Thay đổi mật khẩu của tôi"
-        new:
-          title: "Quên mật khẩu?"
-          button: "Gửi cho tôi đặt lại hướng dẫn mật khẩu"
-      registrations:
-        edit:
-          title: "Chỉnh sửa"
-          button: "Cập nhật"
-          cancel: "Huỷ tài khoản của tôi"
-          unhappy: "Không vui?"
-          confirm: "Bạn có chắc không?"
-          link: "Trở lại"
-        new:
-          sign_up: "Đăng ký"
-      sessions:
-        new:
-          title: "Đăng nhập"
-      shared:
-        link:
-          login: "Đăng nhập"
-          signup: "Đăng ký"
-          forgot: "Quên mật khẩu?"
-          resend_confirmation: "Không nhận được hướng dẫn xác nhận?"
-          resend_unlock: "Không nhận được hướng dẫn mở khóa?"
-          signin_with: "Đăng nhập bằng"
-
-      unlock:
-        resend: "Gửi lại hướng dẫn mở khóa"
+      show:
+        head: "Thông tin cá nhân"
+        click: "Nhấp vào đây để thay đổi hình đại diện"
+        email: "Địa chỉ email"
+        sex: "Giới tính"
+        address: "Địa chỉ"
+        description: "Miêu tả"
     requests:
           new:
             bill: "Thù lao"

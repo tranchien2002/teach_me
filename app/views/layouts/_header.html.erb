@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Teach Me</a>
+      <a class="navbar-brand" href="<%= root_path %>">Teach Me</a>
     </div>
     <ul class="nav navbar-nav">
       <li><a href="#">Test</a></li>
@@ -12,7 +12,7 @@
       <%if user_signed_in? %>
         <li><a href="<%= destroy_user_session_path %>" data-method="delete"><i class="fa fa-sign-out fa-2x" aria-hidden="true"></i><%= t "views.layouts.header.signout" %></a></li>
 
-        <li><a href="#"><i class="fa fa-user fa-2x" aria-hidden="true"></i><%= t "views.layouts.header.profile" %></a></li>
+        <li><a href="<%= user_path current_user %>"><i class="fa fa-user fa-2x" aria-hidden="true"></i><%= t "views.layouts.header.profile" %></a></li>
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-globe fa-2x"></i><%= t "views.layouts.header.notification" %> (<b>2</b>)</a>
@@ -86,7 +86,7 @@
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="language"><i class="fa fa-language fa-2x" aria-hidden="true"></i> <%= t "views.layouts.header.language" %><span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li id="en" value = "english"><%= link_to t("views.layouts.header.en"), locale:"en" %></li>
+          <li id="en" ><%= link_to t("views.layouts.header.en"), locale:"en" %></li>
           <li id="vi" ><%= link_to t("views.layouts.header.vi"), locale:"vi" %></li>
         </ul>
       </li>
