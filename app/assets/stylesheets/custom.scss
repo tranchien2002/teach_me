@@ -114,3 +114,27 @@
 .navbar-default .dropdown-menu.notify-drop .notify-drop-footer a:hover {
   color: $header-noti-footer-hover;
 }
+.form-login {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto 100px;
+  padding: 0px;
+  text-align: center;
+  .modal-inline {
+    display: inline;
+    label {
+      display: inline;
+    }
+  }
+}
+
+.login-inside {
+  width: 400px;
+}
+
+.modal-content {
+  max-width: 400px;
+  max-height: 820px;
+  margin: 0 auto 100px;
+  padding: 45px;
+}

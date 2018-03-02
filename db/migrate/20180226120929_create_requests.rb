@@ -1,10 +1,11 @@
 class CreateRequests < ActiveRecord::Migration[5.1]
   def change
     create_table :requests do |t|
+      t.integer :topic
       t.string :content
-      t.string :plan
-      t.integer :plan
+      t.string :header
       t.float :bill
+      t.integer :status
       t.references :user, foreign_key: true
       t.timestamps
     end
