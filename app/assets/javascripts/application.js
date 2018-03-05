@@ -19,3 +19,10 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+
+$(function() {
+  $('#profile-image1').on('click', function() {
+    $('#profile-image-upload').click();
+  });
+});

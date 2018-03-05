@@ -2,6 +2,8 @@
 @import "bootstrap";
 @import "color";
 
+
+
 .navbar-default .dropdown-menu.notify-drop {
   min-width: 330px;
   background-color: $header-noti-background;
@@ -114,6 +116,7 @@
 .navbar-default .dropdown-menu.notify-drop .notify-drop-footer a:hover {
   color: $header-noti-footer-hover;
 }
+
 .form-login {
   position: relative;
   max-width: 800px;
@@ -137,4 +140,33 @@
   max-height: 820px;
   margin: 0 auto 100px;
   padding: 45px;
+}
+input.hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+#profile-image1 {
+  cursor: pointer;
+
+  width: 100px;
+  height: 100px;
+  border:2px solid $deep_arctic_blue ;
+}
+
+.bot-border{
+  border-bottom:1px $white_smoke solid;
+  margin:5px 0  5px 0;
+}
+
+.tital{
+  font-size:16px; font-weight:500;
+}
+
+h4 {
+  color: $blue_1;
+}
+
+hr {
+  margin:5px 0 5px 0;
 }
