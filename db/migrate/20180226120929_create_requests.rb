@@ -5,7 +5,7 @@ class CreateRequests < ActiveRecord::Migration[5.1]
       t.string :content
       t.string :header
       t.float :bill
-      t.integer :status
+      t.integer :status, default: 1
       t.references :user, foreign_key: true
       t.timestamps
     end

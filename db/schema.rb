@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20180228133208) do
     t.string "content"
     t.string "header"
     t.float "bill"
-    t.integer "status"
+    t.integer "status", default: 1
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

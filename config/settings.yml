@@ -1,0 +1,9 @@
+request:
+  header:
+    minimum: 10
+  content:
+    minimum: 20
+
+show_limit:
+  requests: 5
+

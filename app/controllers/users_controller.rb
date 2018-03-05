@@ -2,8 +2,10 @@ class UsersController < ApplicationController
   load_and_authorize_resource param_method: :user_params
 
   def show
-    @user = User.find_by params[:id]
-    redirect_to root_url unless @user
+    @user = User.find_by id: params[:id]
+    return if @user
+    flash[:danger] = t "controllers.users.show.danger"
+    redirect_to root_url
   end
 
   private
