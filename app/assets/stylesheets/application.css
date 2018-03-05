@@ -12,6 +12,24 @@
  *
  *= require font-awesome
  *= require jquery-ui
+ *= require blue
+ *= require yellow
+ *= require red
+ *= require green
+ *= require global
+ *= require bootstrap-select.min
+ *= require font-awesome.min
+ *= require color-switcher
+ *= require jasny-bootstrap.min
+ *= require themify-icons
+ *= require main
+ *= require responsive
+ *= require simple-line-icons
+ *= require nav-menu
+ *= require material-kit
+ *= require slicknav
+ *= require presets
+ *= require blogpage
  *= require_tree .
  *= require_self
  */

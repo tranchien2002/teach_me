@@ -13,9 +13,27 @@
 //= require jquery3
 //= require jquery_ujs
 //= require i18n
+//= require jquery-min
+//= require bootstrap
+//= require material.min
+//= require material-kit
+//= require jquery.parallax
+//= require owl.carousel.min
+
+
+//= require jquery.slicknav
 //= require i18n.js
 //= require i18n/translations
 //= require rails-ujs
 //= require turbolinks
-//= require bootstrap
+
+//= require jquery.counterup.min
+//= require waypoints.min
+//= require jasny-bootstrap.min.js
+//= require bootstrap-select.min
+//= require wow
+//= require fullscreen.min
+//= require color-switcher
+
+//= require main.js
 //= require_tree .
