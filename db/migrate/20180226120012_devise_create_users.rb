@@ -13,6 +13,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.string :description
       t.string :address
       t.float :wallet
+      t.boolean :admin, default: false
 
       ## Recoverable
       t.string   :reset_password_token

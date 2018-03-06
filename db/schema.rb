@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 20180228133208) do
     t.string "description"
     t.string "address"
     t.float "wallet"
+    t.boolean "admin", default: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
