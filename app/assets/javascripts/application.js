@@ -12,6 +12,7 @@
 //
 //= require jquery-min.js
 //= require jquery_ujs
+//= require jquery.remotipart
 //= require i18n
 //= require i18n.js
 //= require i18n/translations

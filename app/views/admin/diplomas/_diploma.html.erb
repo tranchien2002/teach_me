@@ -1,0 +1,23 @@
+<div class = "<%= diploma.id %>">
+  <li id="diploma-<%= diploma.id %>">
+    <span class="certification"><%= diploma.certification %></span>
+    <span>
+      <div class="col-md-4 col-remove-padding-left">
+        <%= image_tag diploma.demonstrate %>
+      </div>
+    </span>
+    <span class= "delete_diploma" onclick="delete_diploma(this)"><i class="fa fa-times" aria-hidden="true"></i>
+    </span>
+    <%= form_for [:admin, diploma] do |f| %>
+      <%= f.hidden_field :certification, value: diploma.certification %>
+      <%= f.hidden_field :demonstrate, value: diploma.demonstrate %>
+      <% if diploma.verify? %>
+        <%= f.hidden_field :verify, value: false %>
+        <%= f.submit t("views.admin.diplomas.diploma.un_verify") %>
+      <% else %>
+        <%= f.hidden_field :verify, value: true %>
+        <%= f.submit t("views.admin.diplomas.diploma.verify") %>
+      <% end %>
+    <% end %>
+  </li>
+</div>

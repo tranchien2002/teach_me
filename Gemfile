@@ -34,6 +34,8 @@ gem "omniauth-facebook"
 gem "figaro"
 gem "kaminari"
 gem "bootstrap-kaminari-views"
+gem "cocoon"
+gem "remotipart", "~> 1.2"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

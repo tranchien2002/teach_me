@@ -25,6 +25,11 @@ vi:
         sex: "Giới tính"
         address: "Địa chỉ"
         description: "Miêu tả"
+        diploma: "Bằng cấp"
+        list-add: "Danh sách vừa thêm"
+        close: "Đóng"
+        list: "Danh sách"
+        add_diploma: "Thêm bằng cấp"
     requests:
       new:
         bill: "Thù lao"
@@ -47,6 +52,30 @@ vi:
       index:
         my_requests: "Những yêu cầu của tôi"
         more_detail: "Chi tiết hơn"
+    admin:
+      diplomas:
+        index:
+          list_diploma: "Danh sách Bằng cấp"
+          list_pending: "Bằng cấp chờ duyệt"
+          list_approved: "Bằng cấp đã duyệt"
+          update_fail: "Update fail"
+          update_success: "Update success"
+        diploma:
+          un_verify: "Hủy xác thực"
+          verify: "Xác thực"
+    diplomas:
+      diploma:
+      diploma_approved:
+      diploma_pending:
+      modal_form:
+        title: "Tiêu đề"
+        add: "Thêm"
+        image: "Ảnh"
+        create_fail: "khong tao moi duoc"
+        destroy_fail: "khong xoa duoc"
+        confirm: "Bạn chắc chắn muốn xóa không?"
+      new:
+
   controllers:
     requests:
       create:
@@ -60,8 +89,17 @@ vi:
     users:
       show:
         danger: "Không tìm thấy người dùng"
+
     applies:
       create:
         incorrect: "Không thể ứng tuyển"
         error:
           owner: "Bạn không thể tự ứng tuyển"
+      applies:
+        create:
+          incorrect: "Không thể ứng tuyển"
+          error:
+            owner: "Bạn không thể tự ứng tuyển"
+    diploma:
+      diploma_load_fail: "Không thể tải bằng cấp"
+

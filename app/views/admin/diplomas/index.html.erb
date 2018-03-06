@@ -1,0 +1,15 @@
+<h2 class="sub-header"><%= t "views.admin.diplomas.index.list_diploma" %></h2>
+<div class="table-responsive">
+  <h3><%= t "views.admin.diplomas.index.list_pending" %></h3>
+  <table class="table table-striped">
+    <tbody>
+      <%= render partial: "diploma", collection: @diplomas_pending %>
+    </tbody>
+  </table>
+  <h3><%= t "views.admin.diplomas.index.list_approved" %></h3>
+  <table class="table table-striped">
+    <tbody>
+      <%= render partial: "diploma", collection: @diplomas_approved %>
+    </tbody>
+  </table>
+</div>

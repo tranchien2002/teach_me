@@ -25,6 +25,11 @@ en:
         sex: "Sex"
         address: "Address"
         description: "Description"
+        diploma: "Diploma"
+        list-add: "List added"
+        close: "Close"
+        list: "List"
+        add_diploma: "Add Diploma"
     requests:
       new:
         bill: "Bill"
@@ -47,6 +52,30 @@ en:
       index:
         my_requests: "My requests"
         more_detail: "More detail"
+    admin:
+      diplomas:
+        index:
+          list_diploma: "List Diploma"
+          list_pending: "List Pending"
+          all_diploma: "All Diploma"
+          update_fail: "Update fail"
+          update_success: "Update success"
+        diploma:
+          un_verify: "Unverify"
+          verify: "Verify"
+    diplomas:
+      diploma:
+      diploma_approved:
+      diploma_pending:
+      modal_form:
+        title: "Title"
+        add: "Add"
+        image: "Image"
+        create_fail: "Create fail"
+        destroy_fail: "Destroy fail"
+        confirm: "You sure?"
+      new:
+
   controllers:
     requests:
       create:
@@ -65,3 +94,5 @@ en:
         incorrect: "Can not apply"
         error:
           owner: "You can not apply your request"
+    diploma:
+      diploma_load_fail: "Cant load diploma"
