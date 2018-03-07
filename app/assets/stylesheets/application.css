@@ -12,6 +12,10 @@
  *
  *= require font-awesome
  *= require jquery-ui
+ *= require bootstrap.min
+ *= require bootstrap-select.min
+ *= require responsive.css.erb
+ *= require main.css.erb
  *= require_tree .
  *= require_self
  */

@@ -16,8 +16,15 @@
 //= require i18n.js
 //= require i18n/translations
 //= require rails-ujs
-//= require turbolinks
-//= require bootstrap
+//= require jquery-min.js
+//= require jquery.parallax
+//= require owl.carousel.min
+//= require jquery.slicknav
+//= require bootstrap.min
+//= require main
+//= require jquery.counterup.min
+//= require waypoints.min
+//= require bootstrap-select.min
 //= require_tree .
 
 
