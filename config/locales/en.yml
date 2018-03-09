@@ -1,5 +1,10 @@
 en:
   date_format: "%d/%m/%Y"
+  requests:
+    show:
+      no_recipients: "No recipient"
+      someone_applied: "Someone applied"
+      contract_completed: "Contract completed"
   views:
     layouts:
       header:
@@ -25,8 +30,21 @@ en:
         header: "Header"
         topic: "Topic"
         submit: "Submit"
+      show:
+        topic: "Topic"
+        content: "Content"
+        bill: "Bill"
+        status: "Status"
+      edit:
+        submit: "Update"
   controllers:
     requests:
       create:
         success: "Success"
         form_fail: "Your form is incorrect"
+      update:
+        success: "Success"
+        danger: "Update fail!!!"
+    users:
+      show:
+        danger: "Can't find this user"

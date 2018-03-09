@@ -1,0 +1,19 @@
+<div class="container">
+ <div class="row">
+  <div class="col-md-8" >
+   <div class="panel panel-primary">
+    <div class="panel-heading"><%= link_to @request.header , @request %></div>
+     <div class="panel-body">
+      <div align="right"><a href='<%= edit_request_path %>'><span class='glyphicon glyphicon-tasks'></span> &nbsp Edit ! </a></div>
+      <label><%= t "views.requests.show.topic" %>:&nbsp</label><span><%= @request.topic %></span>
+        <br>
+      <label><%= t "views.requests.show.content" %>:&nbsp</label><span><%= @request.content %></span>
+        <br>
+      <label><%= t "views.requests.show.bill" %>:&nbsp</label><span><%= @request.bill %></span>
+      <br>
+      <label><%= t "views.requests.show.status" %>:&nbsp</label><span><%= t ".#{@request.status}" %></span>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
