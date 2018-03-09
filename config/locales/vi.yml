@@ -39,6 +39,9 @@ vi:
         status: "Trạng thái"
       edit:
         submit: "Thay đổi"
+      index:
+        my_requests: "Những yêu cầu của tôi"
+        more_detail: "Chi tiết hơn"
   controllers:
       requests:
         create:

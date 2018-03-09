@@ -7,3 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create email: "tmc@gmail.com", password: "12345678", password_confirmation: "12345678"
 User.create email: "pvt@gmail.com", password: "12345678", password_confirmation: "12345678", admin: true
+20.times do
+  Request.create topic: 1, content: Faker::Lorem.paragraph(2), header: Faker::Lorem.paragraph(2),
+                 bill: 100, status: 3, user_id: 1
+end

@@ -18,7 +18,11 @@ class RequestsController < ApplicationController
   end
 
   def index
-    @requests = Request.all.order(:topic).page(params[:page]).per Settings.show_limit.requests
+    @requests = Request.request_user(current_user.id).page(params[:page]).per(Settings.request.per)
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def edit
@@ -40,7 +44,7 @@ class RequestsController < ApplicationController
   private
 
   def request_params
-    params.require :request .permit :topic, :content, :header, :bill
+    params.require(:request).permit :topic, :content, :header, :bill
   end
 
   def find_request

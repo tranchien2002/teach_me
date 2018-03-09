@@ -10,7 +10,7 @@
         <button class="btn btn-danger navbar-btn btn-md"><a class="none_decoration" href="<%= new_request_url %>" >
           <%= t "views.layouts.header.create_request" %></a></button>
         <%if user_signed_in? %>
-        <button class="btn btn-default navbar-btn btn-md"><%= t "views.layouts.header.view_request" %></button>
+          <button class="btn btn-default navbar-btn btn-md"><a href="<%= requests_url(mine: true) %>" > <%= t "views.layouts.header.view_request" %></a></button>
         <% end %>
         <ul class="nav navbar-nav navbar-right">
           <%if user_signed_in? %>

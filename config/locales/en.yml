@@ -39,6 +39,9 @@ en:
         status: "Status"
       edit:
         submit: "Update"
+      index:
+        my_requests: "My requests"
+        more_detail: "More detail"
   controllers:
     requests:
       create:
