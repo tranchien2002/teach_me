@@ -1,0 +1,11 @@
+<section class="find-job section">
+  <div class="container">
+    <h2 class="section-title"><%= t "views.requests.index.my_requests" %></h2>
+    <div class="row">
+      <div class="col-md-12" id="requests">
+        <%= render @requests %>
+      </div>
+      <div id="paginate"><%= paginate @requests, remote: true %></div>
+    </div>
+  </div>
+</section>
