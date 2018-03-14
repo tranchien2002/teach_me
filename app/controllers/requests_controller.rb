@@ -41,6 +41,18 @@ class RequestsController < ApplicationController
   def show
   end
 
+  def destroy
+    if @request.destroy
+      respond_to do |format|
+        format.html {redirect_to requests_url}
+        format.js
+      end
+    else
+      flash[:danger] = t "controllers.requests.destroy.danger"
+      redirect_to requests_url
+    end
+  end
+
   private
 
   def request_params

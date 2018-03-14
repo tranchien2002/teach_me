@@ -10,13 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery3
+//= require jquery-min.js
 //= require jquery_ujs
 //= require i18n
 //= require i18n.js
 //= require i18n/translations
-//= require rails-ujs
-//= require jquery-min.js
 //= require jquery.parallax
 //= require owl.carousel.min
 //= require jquery.slicknav

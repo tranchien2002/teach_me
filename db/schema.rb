@@ -14,10 +14,10 @@ ActiveRecord::Schema.define(version: 20180228133208) do
 
   create_table "applies", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "requests_id"
+    t.integer "request_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["requests_id"], name: "index_applies_on_requests_id"
+    t.index ["request_id"], name: "index_applies_on_request_id"
     t.index ["user_id"], name: "index_applies_on_user_id"
   end
 

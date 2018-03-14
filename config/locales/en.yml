@@ -37,6 +37,7 @@ en:
         content: "Content"
         bill: "Bill"
         status: "Status"
+        confirm: "Are you sure?"
       edit:
         submit: "Update"
       index:
@@ -50,6 +51,8 @@ en:
       update:
         success: "Success"
         danger: "Update fail!!!"
+      destroy:
+        danger: "Delete failed!"
     users:
       show:
         danger: "Can't find this user"
