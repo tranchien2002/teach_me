@@ -37,19 +37,22 @@ vi:
         content: "Nội dung"
         bill: "Thù lao"
         status: "Trạng thái"
+        confirm: "Bạn có chắc không?"
       edit:
         submit: "Thay đổi"
       index:
         my_requests: "Những yêu cầu của tôi"
         more_detail: "Chi tiết hơn"
   controllers:
-      requests:
-        create:
-          success: "Thành công"
-          form_fail: "Điền thông tin chưa chính xác"
-        update:
+    requests:
+      create:
+        success: "Thành công"
+        form_fail: "Điền thông tin chưa chính xác"
+      update:
         success: "Thành công"
         danger: "Cập nhật thất bại!!!"
-      users:
-        show:
-          danger: "Không tìm thấy người dùng"
+      destroy:
+        danger: "Xóa không thành công!"
+    users:
+      show:
+        danger: "Không tìm thấy người dùng"

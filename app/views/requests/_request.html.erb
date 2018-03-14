@@ -1,9 +1,12 @@
-<div class="job-list">
+<div class="job-list" id="<%= request.id %>">
   <div class="thumb">
     <a href="job-details.html"><img src="" alt=""></a>
   </div>
   <div class="job-list-content">
-    <h4><a href="<%= request_path(request.id) %>"><%= request.header %></a><span class="<%= request.status %>"><%= request.status %></span></h4>
+    <h4>
+      <a href="<%= request_path(request.id) %>"><%= request.header %></a>
+      <span class="<%= request.status %>"><%= request.status %></span>
+    </h4>
     <p><%= request.content %></p>
     <div class="job-tag request">
       <div class="pull-left">
@@ -15,7 +18,14 @@
       <div class="pull-right">
         <div class="icon">
         </div>
-        <a href="<%= request_path(request.id) %>" class="btn btn-common btn-rm"><%= t "views.requests.index.more_detail" %></a>
+        <a href="<%= request_path(request.id) %>" class="btn btn-common btn-rm">
+          <%= t "views.requests.index.more_detail" %>
+        </a>
+        <span id="delete-request">
+          <%= link_to request, method: :delete, data: {confirm: t "views.requests.show.confirm"}, remote: true do %>
+            <i class="fa fa-times" aria-hidden="true"></i>
+          <% end %>
+        </span>
       </div>
     </div>
   </div>
