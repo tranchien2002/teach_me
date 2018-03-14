@@ -1,19 +1,51 @@
-<div class="container">
- <div class="row">
-  <div class="col-md-8" >
-   <div class="panel panel-primary">
-    <div class="panel-heading"><%= link_to @request.header , @request %></div>
-     <div class="panel-body">
-      <div align="right"><a href='<%= edit_request_path %>'><span class='glyphicon glyphicon-tasks'></span> &nbsp Edit ! </a></div>
-      <label><%= t "views.requests.show.topic" %>:&nbsp</label><span><%= @request.topic %></span>
-        <br>
-      <label><%= t "views.requests.show.content" %>:&nbsp</label><span><%= @request.content %></span>
-        <br>
-      <label><%= t "views.requests.show.bill" %>:&nbsp</label><span><%= @request.bill %></span>
-      <br>
-      <label><%= t "views.requests.show.status" %>:&nbsp</label><span><%= t ".#{@request.status}" %></span>
+<section class="find-job section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" id="requests-<%= @request.id %>">
+        <div class="job-list">
+          <div class="thumb">
+            <a href="job-details.html"><img src="" alt=""></a>
+          </div>
+          <div class="job-list-content">
+            <h4><%= @request.header %></a><span class="<%= @request.status %>"><%= @request.status %></span></h4>
+            <p><%= @request.content %></p>
+            <div class="job-tag request">
+              <div class="pull-left">
+                <div class="meta-tag">
+                  <span><a href="browse-categories.html"><i class="ti-brush"></i><%= @request.topic %></a></span>
+                  <span><i class="ti-time"></i><%= @request.bill %> $</span>
+                </div>
+              </div>
+              <div class="pull-right">
+                <% if user_signed_in? %>
+                  <%= button_to t("views.requests.show.apply"), applies_url(request_id: @request.id),
+                                class: "btn btn-success", remote: true %>
+                <% else %>
+                    <a href="#loginModal" data-toggle="modal" id="login-button" class="btn btn-success">
+                      <%= t "views.requests.new.submit" %></a>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-   </div>
   </div>
- </div>
+</section>
+<div class="container">
+  <div class="row">
+    <div class="col-6 col-md-4" >
+      <h5><b><%= t "views.requests.show.appliers" %></b></h5>
+        <div style=" word-wrap: break-word;">
+          <ul id="list-appliers">
+            <% @appliers.each do |applier| %>
+              <%= render partial: "users/applier", locals:{applier: applier}%>
+            <% end %>
+          </ul>
+        </div>
+    </div>
+    <div class="col-12 col-md-8">
+      <h5><b><%= t "views.requests.show.comments" %></b></h5>
+    </div>
+  </div>
 </div>

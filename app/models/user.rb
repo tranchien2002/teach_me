@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :newbies, class_name: Conversation.name, foreign_key: :newbie_id, dependent: :destroy
   has_many :messages, foreign_key: :user_id, dependent: :destroy
   has_many :applies, foreign_key: :user_id, dependent: :destroy
+  has_many :appling, through: :applies, source: :request
   has_many :payments, foreign_key: :user_id, dependent: :destroy
   has_many :diplomas, foreign_key: :user_id, dependent: :destroy
   has_many :requests, foreign_key: :user_id, dependent: :destroy
