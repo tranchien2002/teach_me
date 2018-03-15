@@ -38,6 +38,10 @@ en:
         bill: "Bill"
         status: "Status"
         confirm: "Are you sure?"
+        comments: "Comments"
+        appliers: "Appliers"
+        accept: "Accept"
+        apply: "Apply"
       edit:
         submit: "Update"
       index:
@@ -56,3 +60,8 @@ en:
     users:
       show:
         danger: "Can't find this user"
+    applies:
+      create:
+        incorrect: "Can not apply"
+        error:
+          owner: "You can not apply your request"

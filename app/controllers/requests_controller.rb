@@ -18,7 +18,7 @@ class RequestsController < ApplicationController
   end
 
   def index
-    @requests = Request.request_user(current_user.id).page(params[:page]).per(Settings.request.per)
+    @requests = current_user.requests.page(params[:page]).per(Settings.request.per)
     respond_to do |format|
       format.js
       format.html
@@ -39,6 +39,7 @@ class RequestsController < ApplicationController
   end
 
   def show
+    @appliers = @request.applier
   end
 
   def destroy

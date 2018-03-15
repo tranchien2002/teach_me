@@ -38,6 +38,10 @@ vi:
         bill: "Thù lao"
         status: "Trạng thái"
         confirm: "Bạn có chắc không?"
+        comments: "Bình luận"
+        appliers: "Danh sách ứng tuyển"
+        accept: "Chấp nhận"
+        apply: "Ứng tuyển"
       edit:
         submit: "Thay đổi"
       index:
@@ -56,3 +60,8 @@ vi:
     users:
       show:
         danger: "Không tìm thấy người dùng"
+      applies:
+        create:
+          incorrect: "Không thể ứng tuyển"
+          error:
+            owner: "Bạn không thể tự ứng tuyển"
