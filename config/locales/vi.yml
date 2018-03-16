@@ -7,6 +7,10 @@ vi:
       contract_completed: "Hợp đồng đã hoàn thành"
   views:
     layouts:
+      search_form:
+        placeholder1: "Nhập tên hoặc email...."
+        placeholder2: "Nhập chủ đề hoặc lĩnh vực ..."
+        submit: "Tìm"
       header:
         signin: "Đăng nhập"
         signout: "Đăng xuất"
@@ -30,6 +34,8 @@ vi:
         close: "Đóng"
         list: "Danh sách"
         add_diploma: "Thêm bằng cấp"
+      index:
+        title: "Tất cả người dùng"
     requests:
       new:
         bill: "Thù lao"
@@ -107,4 +113,6 @@ vi:
             owner: "Bạn không thể tự ứng tuyển"
     diploma:
       diploma_load_fail: "Không thể tải bằng cấp"
+    static_pages:
+      warning: "Không tìm thấy!"
 

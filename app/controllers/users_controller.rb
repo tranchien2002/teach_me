@@ -11,6 +11,16 @@ class UsersController < ApplicationController
     redirect_to root_url
   end
 
+  def index
+    @q = User.ransack params[:q]
+    @q.sorts = "name asc" if @q.sorts.empty?
+    @users = @q.result.includes(:requests).page(params[:page]).per(Settings.request.per)
+  end
+
+  def search
+    render :index
+  end
+
   private
 
   def user_params

@@ -7,6 +7,10 @@ en:
       contract_completed: "Contract completed"
   views:
     layouts:
+      search_form:
+        placeholder1: "Find user...."
+        placeholder2: "Find request..."
+        submit: "Search"
       header:
         signin: "Sign in"
         signout: "Sign out"
@@ -30,6 +34,8 @@ en:
         close: "Close"
         list: "List"
         add_diploma: "Add Diploma"
+      index:
+        title: "All Users"
     requests:
       new:
         bill: "Bill"
@@ -101,3 +107,5 @@ en:
           owner: "You can not apply your request"
     diploma:
       diploma_load_fail: "Cant load diploma"
+    static_pages:
+      warning: "No match!"

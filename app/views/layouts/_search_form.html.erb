@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="form-group">
+    <%= search_form_for @q do |f| %>
+      <div class="col-md-4 col-sm-6">
+        <div class="form-group">
+          <%= f.search_field :name_or_email_cont, placeholder: t("views.layouts.search_form.placeholder1"), class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="form-group">
+          <%= f.search_field :requests_topic_or_requests_content_cont, placeholder: t("views.layouts.search_form.placeholder2"), class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6">
+        <div class="form-group">
+          <div class="col-md-4 col-md-offset-4">
+            <%= f.submit t("views.layouts.search_form.submit"), class: "form-control" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>
