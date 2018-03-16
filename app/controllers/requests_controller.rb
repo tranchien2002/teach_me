@@ -39,7 +39,7 @@ class RequestsController < ApplicationController
   end
 
   def show
-    @appliers = @request.applier
+    @appliers = @request.appliers
   end
 
   def destroy

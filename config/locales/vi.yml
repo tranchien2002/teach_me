@@ -60,8 +60,8 @@ vi:
     users:
       show:
         danger: "Không tìm thấy người dùng"
-      applies:
-        create:
-          incorrect: "Không thể ứng tuyển"
-          error:
-            owner: "Bạn không thể tự ứng tuyển"
+    applies:
+      create:
+        incorrect: "Không thể ứng tuyển"
+        error:
+          owner: "Bạn không thể tự ứng tuyển"
