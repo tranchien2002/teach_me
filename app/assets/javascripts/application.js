@@ -23,6 +23,7 @@
 //= require jquery.counterup.min
 //= require waypoints.min
 //= require bootstrap-select.min
+//= require cable
 //= require_tree .
 
 

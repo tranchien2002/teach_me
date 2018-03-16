@@ -37,7 +37,7 @@
     <div class="col-6 col-md-4" >
       <h5><b><%= t "views.requests.show.appliers" %></b></h5>
         <div style=" word-wrap: break-word;">
-          <ul id="list-appliers">
+          <ul id="list-appliers-<%=@request.id %>">
             <% @appliers.each do |applier| %>
               <%= render partial: "users/applier", locals:{applier: applier}%>
             <% end %>

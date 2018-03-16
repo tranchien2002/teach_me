@@ -10,4 +10,5 @@ Rails.application.routes.draw do
     root "admin#index"
     resources :diploma
   end
+  mount ActionCable.server, at: '/cable'
 end
