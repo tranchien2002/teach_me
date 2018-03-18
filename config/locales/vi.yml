@@ -37,6 +37,11 @@ vi:
         header: "Tiêu đề"
         topic: "Chủ đề"
         submit: "Tạo"
+        valid:
+          required: "Trường này là bắt buộc"
+          header_length: "Vui lòng nhập ít nhất 10 ký tự"
+          content_length: "Vui lòng nhập ít nhất 20 ký tự"
+          wrong-format: "Sai định dạng"
       show:
         topic: "Chủ đề"
         content: "Nội dung"

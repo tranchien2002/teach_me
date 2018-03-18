@@ -37,6 +37,11 @@ en:
         header: "Header"
         topic: "Topic"
         submit: "Submit"
+        valid:
+          required: "This field is required"
+          header_length: "Please enter at least 10 characters"
+          content_length: "Please enter at least 20 characters"
+          wrong-format: "Wrong format"
       show:
         topic: "Topic"
         content: "Content"
