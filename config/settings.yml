@@ -6,4 +6,6 @@ request:
   per: 5
 show_limit:
   requests: 5
-
+diploma:
+  certification:
+    minimum: 10

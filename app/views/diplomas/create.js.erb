@@ -1,5 +1,5 @@
 var diploma_certification = $('#diploma_certification').val();
-$('.list-pending').html("<%= j render partial: "diplomas/diploma", locals: {diplomas: @diplomas} %>");
+$('.list-pending').html("<%= j render partial: "diplomas/diploma", locals: {diplomas: @diplomas_pending} %>");
 $('.list-add').append(diploma_certification +'<br>');
 $('#diploma_certification').val('');
 $('#diploma_demonstrate').val('');

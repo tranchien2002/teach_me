@@ -23,7 +23,6 @@
 //= require main
 //= require jquery.counterup.min
 //= require waypoints.min
-//= require bootstrap-select.min
 //= require cable
 //= require i18n
 //= require i18n.js
