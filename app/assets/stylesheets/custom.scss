@@ -194,3 +194,15 @@ hr {
 .accept-apply {
   margin-left: 10px;
 }
+
+.custab{
+  border: 1px solid $gray;
+  padding: 5px;
+  margin: 5% 0;
+  box-shadow: 3px 3px 2px $gray;
+  transition: 0.5s;
+}
+.custab:hover{
+  box-shadow: 3px 3px 0px transparent;
+  transition: 0.5s;
+}

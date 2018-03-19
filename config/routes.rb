@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :requests
   resources :applies, only: [:create]
+  resources :diplomas, only: [ :create, :destroy]
 
   namespace :admin do
     root "admin#index"
-    resources :diploma
+    resources :diplomas
   end
+
   mount ActionCable.server, at: '/cable'
 end

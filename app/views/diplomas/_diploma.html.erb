@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row col-md-6 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+      <thead>
+        <tr>
+          <th>certification</th>
+          <th>status</th>
+          <th class="text-center"></th>
+        </tr>
+      </thead>
+      <% @diplomas.each do |diploma| %>
+        <tr class="diploma-<%= diploma.id %>">
+          <td>
+            <%=diploma.certification%>
+          </td>
+          <td>
+            <%=diploma.verify%>
+          </td>
+          <td class="delete_diploma" onclick="delete_diploma(this)" id="<%= diploma.id %>"><i class="fa fa-times" aria-hidden="true"></i>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

@@ -32,12 +32,13 @@ ActiveRecord::Schema.define(version: 20180315161216) do
   end
 
   create_table "diplomas", force: :cascade do |t|
-    t.string "string"
+    t.string "certification"
     t.string "demonstrate"
+    t.boolean "verify", default: false
     t.integer "user_id"
-    t.boolean "verify"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["certification"], name: "index_diplomas_on_certification", unique: true
     t.index ["user_id"], name: "index_diplomas_on_user_id"
   end
 
