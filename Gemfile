@@ -36,6 +36,9 @@ gem "kaminari"
 gem "bootstrap-kaminari-views"
 gem "cocoon"
 gem "remotipart", "~> 1.2"
+gem "i18n-js"
+gem "jquery-validation-rails"
+gem "activerecord-import"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
