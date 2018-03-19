@@ -25,6 +25,10 @@
 //= require waypoints.min
 //= require bootstrap-select.min
 //= require cable
+//= require i18n
+//= require i18n.js
+//= require i18n/translations
+//= require jquery.validate
 //= require_tree .
 
 

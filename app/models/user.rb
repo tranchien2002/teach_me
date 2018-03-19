@@ -11,7 +11,8 @@ class User < ApplicationRecord
   has_many :payments, foreign_key: :user_id, dependent: :destroy
   has_many :diplomas, foreign_key: :user_id, dependent: :destroy
   has_many :requests, foreign_key: :user_id, dependent: :destroy
-
+  has_many :send_notifications, foreign_key: :sender_id, class_name: Notification.name, dependent: :delete_all
+  has_many :receive_notifications, foreign_key: :receiver_id, class_name: Notification.name, dependent: :delete_all
   class << self
     def from_omniauth auth
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

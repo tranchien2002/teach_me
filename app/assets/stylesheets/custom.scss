@@ -194,7 +194,6 @@ hr {
 .accept-apply {
   margin-left: 10px;
 }
-
 .custab{
   border: 1px solid $gray;
   padding: 5px;
@@ -202,7 +201,13 @@ hr {
   box-shadow: 3px 3px 2px $gray;
   transition: 0.5s;
 }
-.custab:hover{
+.custab:hover {
   box-shadow: 3px 3px 0px transparent;
   transition: 0.5s;
+}
+label.error {
+  color: $error_validate;
+}
+.notifying {
+  color: red;
 }
