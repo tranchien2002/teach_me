@@ -27,5 +27,4 @@ class AppliesController < ApplicationController
   def render_applier applier
     render_to_string partial: "users/applier", locals: {applier: applier}
   end
-
 end
