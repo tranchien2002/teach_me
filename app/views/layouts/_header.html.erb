@@ -3,105 +3,59 @@
   <div id="intro" class="section-intro">
     <div class="logo-menu">
       <nav class="navbar navbar-default" style="opacity: 1;margin-bottom: 0">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="<%= root_path %>">Teach Me</a>
-        </div>
-        <button class="btn btn-danger navbar-btn btn-md"><a class="none_decoration" href="<%= new_request_url %>" >
-          <%= t "views.layouts.header.create_request" %></a></button>
-        <%if user_signed_in? %>
-          <button class="btn btn-default navbar-btn btn-md"><a href="<%= requests_url(mine: true) %>" >
-            <%= t "views.layouts.header.view_request" %></a></button>
-        <% end %>
-        <ul class="nav navbar-nav navbar-right">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="<%= root_path %>">Teach Me</a>
+          </div>
+          <button class="btn btn-danger navbar-btn btn-md"><a class="none_decoration" href="<%= new_request_url %>" >
+            <%= t "views.layouts.header.create_request" %></a></button>
           <%if user_signed_in? %>
-            <li><a href="<%= destroy_user_session_path %>" data-method="delete">
-              <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i><%= t "views.layouts.header.signout" %></a></li>
+              <button class="btn btn-default navbar-btn btn-md"><a href="<%= requests_url(mine: true) %>" >
+                <%= t "views.layouts.header.view_request" %></a></button>
+          <% end %>
+          <ul class="nav navbar-nav navbar-right">
+            <%if user_signed_in? %>
+                <li><a href="<%= destroy_user_session_path %>" data-method="delete">
+                  <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i><%= t "views.layouts.header.signout" %></a></li>
 
-            <li><a href="<%= user_path current_user %>"><i class="fa fa-user fa-2x" aria-hidden="true"></i>
-              <%= t "views.layouts.header.profile" %></a></li>
+                <li><a href="<%= user_path current_user %>"><i class="fa fa-user fa-2x" aria-hidden="true"></i>
+                  <%= t "views.layouts.header.profile" %></a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                     aria-expanded="false" id="notifying-<%= current_user.id %>">
+                    <i class="fa fa-globe fa-2x"></i><%= t "views.layouts.header.notification" %></a>
+                  <ul class="dropdown-menu notify-drop">
+                    <div class="notify-drop-title">
+                      <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-6">Bildirimler (<b>2</b>)</div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                          <a href="" class="rIcon allRead" data-tooltip="tooltip" data-placement="bottom" title="tümü okundu.">
+                            <i class="fa fa-dot-circle-o"></i></a></div>
+                      </div>
+                    </div>
+                    <div class="drop-content" id="notifications-<%= current_user.id %>">
+                      <% current_user.receive_notifications.order(created_at: :desc).each do |item| %>
+                          <%= render partial: "notifications/notification", locals: {notification: item} %>
+                      <% end %>
+                    </div>
+                    <div class="notify-drop-footer text-center">
+                      <a href=""><i class="fa fa-eye"></i> <%= current_user.email %></a>
+                    </div>
+                  </ul>
+                </li>
+            <% else %>
+                <li><a href="<%= new_user_session_path %>"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i><%= t "views.layouts.header.signin" %></a></li>
+            <% end %>_
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                 aria-expanded="false"><i class="fa fa-globe fa-2x"></i><%= t "views.layouts.header.notification" %> (<b>2</b>)</a>
-              <ul class="dropdown-menu notify-drop">
-                <div class="notify-drop-title">
-                  <div class="row">
-                    <div class="col-md-6 col-sm-6 col-xs-6">Bildirimler (<b>2</b>)</div>
-                    <div class="col-md-6 col-sm-6 col-xs-6 text-right">
-                      <a href="" class="rIcon allRead" data-tooltip="tooltip" data-placement="bottom" title="tümü okundu.">
-                        <i class="fa fa-dot-circle-o"></i></a></div>
-                  </div>
-                </div>
-                <div class="drop-content" id="notifications">
-                  <li>
-                    <div class="col-md-3 col-sm-3 col-xs-3"><div class="notify-img"><img src="http://placehold.it/45x45" alt=""></div></div>
-                    <div class="col-md-9 col-sm-9 col-xs-9 pd-l0"><a href="">Ahmet</a> yorumladı. <a href="">Çicek bahçeleri...</a> <a href="" class="rIcon"><i class="fa fa-dot-circle-o"></i></a>
-
-                      <hr>
-                      <p class="time">Şimdi</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="col-md-3 col-sm-3 col-xs-3"><div class="notify-img"><img src="http://placehold.it/45x45" alt=""></div></div>
-                    <div class="col-md-9 col-sm-9 col-xs-9 pd-l0"><a href="">Ahmet</a> yorumladı. <a href="">Çicek bahçeleri...</a> <a href="" class="rIcon"><i class="fa fa-dot-circle-o"></i></a>
-                      <p>Lorem ipsum sit dolor amet consilium.</p>
-                      <p class="time">1 Saat önce</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="col-md-3 col-sm-3 col-xs-3"><div class="notify-img"><img src="http://placehold.it/45x45" alt=""></div></div>
-                    <div class="col-md-9 col-sm-9 col-xs-9 pd-l0"><a href="">Ahmet</a> yorumladı. <a href="">Çicek bahçeleri...</a> <a href="" class="rIcon"><i class="fa fa-dot-circle-o"></i></a>
-                      <p>Lorem ipsum sit dolor amet consilium.</p>
-                      <p class="time">2 Hafta önce</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="col-md-3 col-sm-3 col-xs-3"><div class="notify-img"><img src="http://placehold.it/45x45" alt=""></div></div>
-                    <div class="col-md-9 col-sm-9 col-xs-9 pd-l0"><a href="">Ahmet</a> yorumladı. <a href="">Çicek bahçeleri...</a> <a href="" class="rIcon"><i class="fa fa-dot-circle-o"></i></a>
-                      <p>Lorem ipsum sit dolor amet consilium.</p>
-                      <p class="time">2 Hafta önce</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="col-md-3 col-sm-3 col-xs-3"><div class="notify-img"><img src="http://placehold.it/45x45" alt=""></div></div>
-                    <div class="col-md-9 col-sm-9 col-xs-9 pd-l0"><a href="">Ahmet</a> yorumladı. <a href="">Çicek bahçeleri...</a> <a href="" class="rIcon"><i class="fa fa-dot-circle-o"></i></a>
-                      <p>Lorem ipsum sit dolor amet consilium.</p>
-                      <p class="time">2 Hafta önce</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="col-md-3 col-sm-3 col-xs-3"><div class="notify-img"><img src="http://placehold.it/45x45" alt=""></div></div>
-                    <div class="col-md-9 col-sm-9 col-xs-9 pd-l0"><a href="">Ahmet</a> yorumladı. <a href="">Çicek bahçeleri...</a> <a href="" class="rIcon"><i class="fa fa-dot-circle-o"></i></a>
-                      <p>Lorem ipsum sit dolor amet consilium.</p>
-                      <p class="time">2 Hafta önce</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="col-md-3 col-sm-3 col-xs-3"><div class="notify-img"><img src="http://placehold.it/45x45" alt=""></div></div>
-                    <div class="col-md-9 col-sm-9 col-xs-9 pd-l0"><a href="">Ahmet</a> yorumladı. <a href="">Çicek bahçeleri...</a> <a href="" class="rIcon"><i class="fa fa-dot-circle-o"></i></a>
-                      <p>Lorem ipsum sit dolor amet consilium.</p>
-                      <p class="time">2 Hafta önce</p>
-                    </div>
-                  </li>
-                </div>
-                <div class="notify-drop-footer text-center">
-                  <a href=""><i class="fa fa-eye"></i> Tümünü Göster</a>
-                </div>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="language"><i class="fa fa-language fa-2x" aria-hidden="true"></i> <%= t "views.layouts.header.language" %><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li id="en" ><%= link_to t("views.layouts.header.en"), locale:"en" %></li>
+                <li id="vi" ><%= link_to t("views.layouts.header.vi"), locale:"vi" %></li>
               </ul>
             </li>
-          <% else %>
-            <li><a href="<%= new_user_session_path %>"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i><%= t "views.layouts.header.signin" %></a></li>
-          <% end %>_
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="language"><i class="fa fa-language fa-2x" aria-hidden="true"></i> <%= t "views.layouts.header.language" %><span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li id="en" ><%= link_to t("views.layouts.header.en"), locale:"en" %></li>
-              <li id="vi" ><%= link_to t("views.layouts.header.vi"), locale:"vi" %></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
+          </ul>
+        </div>
+      </nav>
     </div>
   </div>
 </div>
