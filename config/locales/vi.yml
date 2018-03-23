@@ -7,6 +7,10 @@ vi:
       contract_completed: "Hợp đồng đã hoàn thành"
   views:
     layouts:
+      search_form:
+        placeholder1: "Nhập tên hoặc email...."
+        placeholder2: "Nhập chủ đề hoặc lĩnh vực ..."
+        submit: "Tìm"
       header:
         signin: "Đăng nhập"
         signout: "Đăng xuất"
@@ -34,6 +38,8 @@ vi:
         status: "Trạng thái"
         pending: "Đang chờ"
         approved: "Đã phê duyệt"
+      index:
+        title: "Tất cả"
     requests:
       new:
         bill: "Thù lao"
@@ -83,7 +89,6 @@ vi:
         create_fail: "khong tao moi duoc"
         destroy_fail: "khong xoa duoc"
         confirm: "Bạn chắc chắn muốn xóa không?"
-      new:
 
   controllers:
     requests:
@@ -105,6 +110,8 @@ vi:
           owner: "Bạn không thể tự ứng tuyển"
     diploma:
       diploma_load_fail: "Không thể tải bằng cấp"
+    static_pages:
+      warning: "Không tìm thấy!"
 
   admin:
     actions:
@@ -235,6 +242,7 @@ vi:
       next: Tiếp &raquo;
       previous: "&laquo; Trước"
       truncate: "…"
+
   datetime:
     distance_in_words:
       about_x_hours:
