@@ -15,6 +15,7 @@
  *= require bootstrap-select.min
  *= require responsive.css.erb
  *= require main.css.erb
+ *= require chat-conversation
  *= require_tree .
  *= require_self
  */

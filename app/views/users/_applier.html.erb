@@ -8,8 +8,12 @@
       <div class="col-md-6">
         <% if user_signed_in? %>
           <div class="col-md-6">
-          <%= button_to t("views.requests.show.accept"), conversations_url(applier_id: applier.id, request_id: request_id),
+            <% if applier.free? %>
+              <%= button_to t("views.requests.show.accept"), conversations_url(applier_id: applier.id, request_id: request_id),
                  class:"btn btn-success accept-apply", id: applier.id %>
+            <% else %>
+              <button class="btn btn-warning"><%= t "views.requests.show.user_busy" %></button>
+            <% end %>
           </div>
           <div class="col-md-3">
             <%= button_to "X", {controller: :applies, action: :destroy, id: Apply.find_apply(request_id, applier.id) },

@@ -4,7 +4,8 @@ class CreateConversations < ActiveRecord::Migration[5.1]
       t.integer :newbie_id
       t.integer :expert_id
       t.references :request, foreign_key: true
-      t.float :rate_float
+      t.boolean :done, default: false
+      t.float :rate_point
 
       t.timestamps
     end
