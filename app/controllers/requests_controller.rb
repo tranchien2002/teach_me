@@ -7,7 +7,6 @@ class RequestsController < ApplicationController
 
   def create
     request_user = current_user.requests.new request_params
-
     if request_user.save
       flash[:success] = t "controllers.requests.create.success"
       redirect_to root_url

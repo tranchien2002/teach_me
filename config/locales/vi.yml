@@ -41,6 +41,9 @@ vi:
       index:
         title: "Tất cả"
     requests:
+      notifications:
+        delete: "Đã hủy"
+        apply: "Đã ứng tuyển"
       new:
         bill: "Thù lao"
         content: "Nội dung"
@@ -60,7 +63,7 @@ vi:
         confirm: "Bạn có chắc không?"
         comments: "Bình luận"
         appliers: "Danh sách ứng tuyển"
-        accept: "Chấp nhận"
+        accept: "Đồng ý"
         apply: "Ứng tuyển"
       edit:
         submit: "Thay đổi"
@@ -100,6 +103,10 @@ vi:
         danger: "Cập nhật thất bại!!!"
       destroy:
         danger: "Xóa không thành công!"
+      show:
+        error:
+          accept_self: "Bạn không thể tự chấp nhận ứng cử"
+          error_owner: "Chỉ người yêu cầu mới được chấp nhận ứng cử"
     users:
       show:
         danger: "Không tìm thấy người dùng"
@@ -108,6 +115,9 @@ vi:
         incorrect: "Không thể ứng tuyển"
         error:
           owner: "Bạn không thể tự ứng tuyển"
+          applied: "Bạn đã ứng tuyển"
+      destroy:
+        delete_denied: "Bạn không thể xóa ứng tuyển"
     diploma:
       diploma_load_fail: "Không thể tải bằng cấp"
     static_pages:

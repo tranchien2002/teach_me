@@ -21,8 +21,8 @@
                   <%= button_to t("views.requests.show.apply"), applies_url(request_id: @request.id),
                                 class: "btn btn-success", remote: true %>
                 <% else %>
-                    <a href="#loginModal" data-toggle="modal" id="login-button" class="btn btn-success">
-                      <%= t "views.requests.new.submit" %></a>
+                  <a href="#loginModal" data-toggle="modal" id="login-button" class="btn btn-success">
+                      <%= t "views.requests.show.apply" %></a>
                 <% end %>
               </div>
             </div>
@@ -39,7 +39,7 @@
         <div style=" word-wrap: break-word;">
           <ul id="list-appliers-<%=@request.id %>">
             <% @appliers.each do |applier| %>
-              <%= render partial: "users/applier", locals:{applier: applier}%>
+              <%= render partial: "users/applier", locals: {applier: applier, request_id: @request.id}%>
             <% end %>
           </ul>
         </div>

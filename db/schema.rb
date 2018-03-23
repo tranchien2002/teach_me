@@ -24,11 +24,13 @@ ActiveRecord::Schema.define(version: 20180315161216) do
   create_table "conversations", force: :cascade do |t|
     t.integer "newbie_id"
     t.integer "expert_id"
+    t.integer "request_id"
     t.float "rate_float"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["expert_id"], name: "index_conversations_on_expert_id"
     t.index ["newbie_id"], name: "index_conversations_on_newbie_id"
+    t.index ["request_id"], name: "index_conversations_on_request_id"
   end
 
   create_table "diplomas", force: :cascade do |t|

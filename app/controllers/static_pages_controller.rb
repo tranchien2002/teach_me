@@ -1,11 +1,16 @@
 class StaticPagesController < ApplicationController
   before_action :search_params
   def home
+    @requests = Request.all.page(params[:page]).per(Settings.request.per)
+    respond_to do |format|
+      format.js
+      format.html
+    end
     if params[:q]
       @users = @q.result.includes(:requests).page(params[:page]).per(Settings.request.per)
       if @users.present?
-        return
         render "users/index"
+        return
       else
         flash[:warning] = t("controllers.static_pages.warning")
       end

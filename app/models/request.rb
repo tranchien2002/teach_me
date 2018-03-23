@@ -4,6 +4,7 @@ class Request < ApplicationRecord
   has_many :applies, dependent: :destroy
   has_many :appliers, through: :applies, source: :user
   belongs_to :user
+  has_one :conversation, dependent: :destroy
   validates :bill, presence: true, numericality: { only_float: true },format: {with: /[0-9]*\.[0-9]*/}
   validates :header, presence: true, length: {minimum: Settings.request.header.minimum}
   validates :content, presence: true, length: {minimum: Settings.request.content.minimum}

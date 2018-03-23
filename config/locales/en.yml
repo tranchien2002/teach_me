@@ -41,6 +41,9 @@ en:
       index:
         title: "All Users"
     requests:
+      notifications:
+        delete: "Deleted: "
+        apply: "Applied: "
       new:
         bill: "Bill"
         content: "Content"
@@ -100,6 +103,10 @@ en:
         danger: "Update fail!!!"
       destroy:
         danger: "Delete failed!"
+      show:
+        error:
+          accept_self: "You can't accept your apply"
+          error_owner: "Only owner can accept"
     users:
       show:
         danger: "Can't find this user"
@@ -108,6 +115,9 @@ en:
         incorrect: "Can not apply"
         error:
           owner: "You can not apply your request"
+          applied: "You have applied"
+      destroy:
+        delete_denied: "You can't delete this apply"
     diploma:
       diploma_load_fail: "Cant load diploma"
     static_pages:
