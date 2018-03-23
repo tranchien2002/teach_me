@@ -8,6 +8,14 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  def after_sign_in_path_for(resource)
+    stored_location_for(resource) || super
+  end
+
+  def after_sign_out_path_for(resource_or_scope)
+    URI.parse(request.referer).path if request.referer
+  end
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit :sign_up, keys: [:name, :sex, :address, :avatar, :description]
   end

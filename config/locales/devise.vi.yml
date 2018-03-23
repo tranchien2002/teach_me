@@ -101,6 +101,8 @@ vi:
         we_need_your_current_password_to_confirm_your_changes: we need your current password to confirm your changes
       new:
         sign_up: "Đăng ký"
+        male: "Nam"
+        female: "Nữ"
       signed_up: Xin chào! Bạn đã đăng ký thành công.
       signed_up_but_inactive: Bạn đã đăng ký thành công. Tuy nhiên, bạn cần phải kích hoạt tài khoản trước khi có thể đăng nhập được.
       signed_up_but_locked: Bạn đã đăng ký thành công. Tuy nhiên tài khoản của bạn đã bị khóa nên không thể đăng nhập được.

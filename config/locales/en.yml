@@ -89,7 +89,6 @@ en:
         create_fail: "Create fail"
         destroy_fail: "Destroy fail"
         confirm: "You sure?"
-      new:
 
   controllers:
     requests:
