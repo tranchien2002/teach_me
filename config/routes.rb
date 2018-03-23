@@ -7,10 +7,6 @@ Rails.application.routes.draw do
   resources :applies, only: [:create]
   resources :diplomas, only: [ :create, :destroy]
 
-  namespace :admin do
-    root "admin#index"
-    resources :diplomas
-  end
-
   mount ActionCable.server, at: '/cable'
+  mount RailsAdmin::Engine => "/admin", as: :rails_admin
 end

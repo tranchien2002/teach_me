@@ -2,10 +2,10 @@ class UsersController < ApplicationController
   load_and_authorize_resource param_method: :user_params
 
   def show
-    @diplomas = current_user.diplomas.page(params[:page]).per(Settings.request.per)
-    @diploma = Diploma.new
-    @diploma.user_id = current_user.id
     @user = User.find_by id: params[:id]
+    @diplomas_pending = @user.diplomas.verify(false).page(params[:page]).per(Settings.request.per)
+    @diplomas_approved = @user.diplomas.verify(true).page(params[:page]).per(Settings.request.per)
+    @diploma = Diploma.new
     return if @user
     flash[:danger] = t "controllers.users.show.danger"
     redirect_to root_url

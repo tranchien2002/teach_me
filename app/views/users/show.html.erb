@@ -46,9 +46,13 @@
           <%= @user.description %>
         </div>
         <br>
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
-          <%= t "views.users.show.add_diploma" %>
-        </button>
+        <% if user_signed_in? %>
+          <% if current_user == @user %>
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
+              <%= t "views.users.show.add_diploma" %>
+            </button>
+          <%end%>
+        <%end%>
         <!-- Modal -->
         <div id="myModal" class="modal fade" role="dialog">
           <div class="modal-dialog">
@@ -80,10 +84,23 @@
 </div>
 <div>
   <ol class="diplomas">
-    <h3><%= t "views.users.show.diploma" %> (<%= @user.diplomas.count %>)</h3>
-    <div class="list-pending">
+    <h3><%= t "views.users.show.diploma" %> (<%= @diplomas_approved.count %>)</h3>
+    <div class="list-diploma">
       <% if @user.diplomas.any? %>
-        <%= render partial: 'diplomas/diploma', locals:{diplomas: @diplomas} %>
+        <% if current_user == @user %>
+        <div class="list-pending">
+          <p> <%= t "views.users.show.pending" %></p>
+          <%= render partial: "diplomas/diploma", locals:{diplomas: @diplomas_pending} %>
+        </div>
+        <div class="list-approved">
+          <p> <%= t "views.users.show.approved" %></p>
+          <%= render partial: "diplomas/diploma", locals:{diplomas: @diplomas_approved} %>
+        </div>
+        <% else %>
+          <div class="list-approved">
+            <%= render partial: "diplomas/diploma", locals:{diplomas: @diplomas_approved} %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </ol>

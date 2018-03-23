@@ -12,8 +12,9 @@ class DiplomasController < ApplicationController
 
   def create
     @diploma = current_user.diplomas.build diploma_params
+    @diploma.user_id = current_user.id
     if @diploma.save
-      @diplomas = current_user.diplomas.page(params[:page]).per(Settings.request.per)
+      @diplomas_pending = current_user.diplomas.verify(false).page(params[:page]).per(Settings.request.per)
       respond_to do |format|
         format.js
       end
