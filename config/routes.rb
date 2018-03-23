@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   }
   resources :users, only: [:index, :show]
   resources :requests
-  resources :applies, only: [:create]
+  resources :applies, only: [:create, :destroy]
   resources :diplomas, only: [ :create, :destroy]
+  resources :conversations, only: [:new ,:create, :show]
 
   mount ActionCable.server, at: '/cable'
   mount RailsAdmin::Engine => "/admin", as: :rails_admin

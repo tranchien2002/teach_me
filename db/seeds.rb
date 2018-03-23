@@ -8,6 +8,7 @@
 
 User.create email: "tmc@gmail.com",name: "chien", password: "12345678", password_confirmation: "12345678"
 User.create email: "tmc1@gmail.com",name: "tmc", password: "12345678", password_confirmation: "12345678"
+User.create email: "tmc2@gmail.com",name: "tmc", password: "12345678", password_confirmation: "12345678"
 User.create email: "pvt@gmail.com",name: "Duc", password: "12345678", password_confirmation: "12345678", admin: true
 requests = []
 20.times do
