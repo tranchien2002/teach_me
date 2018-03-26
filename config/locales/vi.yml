@@ -21,6 +21,7 @@ vi:
         language: "Ngôn ngữ"
         create_request: "Tạo yêu cầu"
         view_request: "Xem các yêu cầu của tôi"
+        redirect_to: "Chuyển đến"
     users:
       show:
         head: "Thông tin cá nhân"

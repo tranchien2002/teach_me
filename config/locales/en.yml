@@ -21,6 +21,7 @@ en:
         language: "Language"
         create_request: "Create request"
         view_request: "View my requests"
+        redirect_to: "Move"
     users:
       show:
         head: "User Profile"

@@ -8,6 +8,5 @@ class CreateDiplomas < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-    add_index :diplomas, :certification, unique: true
   end
 end

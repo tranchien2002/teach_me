@@ -3,7 +3,23 @@
     <div class="row">
       <div class="col-md-6">
         <img src ="https://cdn1.iconfinder.com/data/icons/user-pictures/101/malecostume-512.png" height="40" width="40">&nbsp;
-        <%= link_to applier.email, user_path(applier) %>
+        <%= link_to applier.name, "#my-modal-#{applier.id}", "data-toggle" => "modal" %>
+          <div class="modal" id="my-modal-<%= applier.id %>" title="My modal">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"><%= t "views.users.show.diploma" %></h4>
+              </div>
+              <div class="modal-body">
+                <%= render partial: "users/diploma", collection: current_user_diplomas(applier), as: :diploma %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                  <%= t "views.users.show.close" %>
+                </button>
+              </div>
+            </div>
+          </div>
       </div>
       <div class="col-md-6">
         <% if user_signed_in? %>

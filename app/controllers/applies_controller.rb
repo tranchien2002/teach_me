@@ -6,7 +6,7 @@ class AppliesController < ApplicationController
     if apply.save
       @applier = current_user
       current_request = apply.request
-      noti = current_user.send_notifications.create(event: t("views.requests.notifications.apply") + current_request.header, receiver_id: current_request.user_id)
+      noti = current_user.send_notifications.create(event: t("views.requests.notifications.apply") + current_request.header, receiver_id: current_request.user_id, object_id: current_request.id)
       ActionCable.server.broadcast "notification_apply_channel", applier: render_applier(current_user, current_request.id),
                                    request_id: current_request.id,
                                    notification: render_notification(noti),
@@ -27,7 +27,7 @@ class AppliesController < ApplicationController
       redirect_to request.referrer || root_url
     else
       current_request = apply.request
-      noti = current_user.send_notifications.create(event: t("views.requests.notifications.delete") + current_request.header, receiver_id: current_request.user_id)
+      noti = current_user.send_notifications.create(event: t("views.requests.notifications.delete") + current_request.header, receiver_id: current_request.user_id, object_id: current_request.id)
       if apply.destroy!
         ActionCable.server.broadcast "notification_apply_channel", applier_destroy: applier_id,
                                      request_id: current_request.id,notification: render_notification(noti),
