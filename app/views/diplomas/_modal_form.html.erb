@@ -1,4 +1,4 @@
-<div class="addform" id= "new_diploma">
+<div class="addform">
   <%= form_for(@diploma, remote: true)  do |f| %>
     <div class="field">
       <%= f.label :certification, t("views.diplomas.modal_form.title") %><br>
@@ -11,3 +11,4 @@
     <%= f.button t("views.diplomas.modal_form.add"), class: "btn btn-primary" %>
   <% end %>
 </div>
+<%= javascript_include_tag "validate_diploma" %>

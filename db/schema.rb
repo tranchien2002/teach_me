@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(version: 20180315161216) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["certification"], name: "index_diplomas_on_certification", unique: true
     t.index ["user_id"], name: "index_diplomas_on_user_id"
   end
 
@@ -57,6 +56,7 @@ ActiveRecord::Schema.define(version: 20180315161216) do
     t.string "event"
     t.integer "receiver_id"
     t.integer "sender_id"
+    t.integer "object_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

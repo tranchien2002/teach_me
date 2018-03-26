@@ -17,6 +17,3 @@ requests = []
                  bill: 100, status: rand(1...3), user_id: 1)
 end
 Request.import! requests
-Diploma.create certification:"abc", user_id: 1
-
-
