@@ -65,6 +65,7 @@ en:
         appliers: "Appliers"
         accept: "Accept"
         apply: "Apply"
+        user_busy: "Busy"
       edit:
         submit: "Update"
       index:
@@ -107,6 +108,7 @@ en:
         error:
           accept_self: "You can't accept your apply"
           error_owner: "Only owner can accept"
+          error_busy: "You or this applicant is in another conversation"
     users:
       show:
         danger: "Can't find this user"

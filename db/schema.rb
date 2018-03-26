@@ -25,7 +25,8 @@ ActiveRecord::Schema.define(version: 20180315161216) do
     t.integer "newbie_id"
     t.integer "expert_id"
     t.integer "request_id"
-    t.float "rate_float"
+    t.boolean "done", default: false
+    t.float "rate_point"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["expert_id"], name: "index_conversations_on_expert_id"
@@ -99,6 +100,7 @@ ActiveRecord::Schema.define(version: 20180315161216) do
     t.string "description"
     t.string "address"
     t.float "wallet"
+    t.boolean "free", default: true
     t.boolean "admin", default: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

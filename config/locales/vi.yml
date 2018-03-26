@@ -65,6 +65,7 @@ vi:
         appliers: "Danh sách ứng tuyển"
         accept: "Đồng ý"
         apply: "Ứng tuyển"
+        user_busy: "Bận"
       edit:
         submit: "Thay đổi"
       index:
@@ -107,6 +108,7 @@ vi:
         error:
           accept_self: "Bạn không thể tự chấp nhận ứng cử"
           error_owner: "Chỉ người yêu cầu mới được chấp nhận ứng cử"
+          error_busy: "Bạn hoặc ứng cử viên này đang trong một cuộc hội thoại khác"
     users:
       show:
         danger: "Không tìm thấy người dùng"

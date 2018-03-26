@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   before_action :search_params
   def home
-    @requests = Request.all.page(params[:page]).per(Settings.request.per)
+    @requests = Request.request_applying.page(params[:page]).per(Settings.request.per)
     respond_to do |format|
       format.js
       format.html
