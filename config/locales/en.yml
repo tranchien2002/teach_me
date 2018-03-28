@@ -43,8 +43,8 @@ en:
         title: "All Users"
     requests:
       notifications:
-        delete: "Deleted: "
-        apply: "Applied: "
+        delete: "DELETED: "
+        apply: "APPLIED: "
       new:
         bill: "Bill"
         content: "Content"
@@ -95,8 +95,11 @@ en:
         destroy_fail: "Destroy fail"
         confirm: "You sure?"
     conversation:
-      notification: "Create conversation"
-
+      notification: "CREATED CONVERSATION"
+      show:
+        content: "Content:"
+        close: "Close"
+        confirm: "Are you sure ?"
   controllers:
     requests:
       create:

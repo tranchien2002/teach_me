@@ -11,3 +11,5 @@ diploma:
     minimum: 10
 message:
   for_display: 50
+home:
+  hot_topic_count: 3

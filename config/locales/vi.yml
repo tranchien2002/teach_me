@@ -43,8 +43,8 @@ vi:
         title: "Tất cả"
     requests:
       notifications:
-        delete: "Đã hủy"
-        apply: "Đã ứng tuyển"
+        delete: "ĐÃ HỦY: "
+        apply: "ĐÃ ỨNG TUYỂN: "
       new:
         bill: "Thù lao"
         content: "Nội dung"
@@ -95,8 +95,11 @@ vi:
         destroy_fail: "khong xoa duoc"
         confirm: "Bạn chắc chắn muốn xóa không?"
     conversation:
-      notification: "Đã tạo phòng chat"
-
+      notification: "ĐÃ TẠO PHÒNG CHAT"
+      show:
+        content: "Nội dung:"
+        close: "Đóng"
+        confirm: "Bạn chắc chắn đóng cuộc hội thoại này chứ ?"
   controllers:
     requests:
       create:

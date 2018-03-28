@@ -9,7 +9,11 @@ class Request < ApplicationRecord
   validates :header, presence: true, length: {minimum: Settings.request.header.minimum}
   validates :content, presence: true, length: {minimum: Settings.request.content.minimum}
 
-  scope :request_applying, -> {where(status: :Applying)}
+  scope :request_applying, -> {where(status: :Applying).order(created_at: :desc)}
+
+  scope :hot_topic, -> {select(:topic).group(:topic).where(status: :Applying).limit(Settings.home.hot_topic_count)}
+
+  scope :request_by_topic, -> topic {where(status: :Applying, topic: topic).order created_at: :desc}
 
   def is_user? other_id
     user_id == other_id

@@ -8,17 +8,29 @@
         </div>
       </div>
       <div class="left-chat">
+        <ul>
+          <li>
+            <div class="chat-left-detail">
+              <div id="content-conversation"><h2><i class="fa fa-info-circle"></i> <%= t "views.conversation.show.content" %> </h2> <%= @conversation.request.content %></div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
     <div class="col-md-9 col-sm-9 col-xs-12 right-sidebar">
       <div class="row">
         <div class="col-md-12 right-header">
           <div class="right-header-img">
-            <%= image_tag("businessman.png") %>
+            <%= button_to t("views.conversation.show.close"), {action: "close", id: @conversation.id}, method: :put, data: {confirm: t("views.conversation.show.confirm")}, class: "btn btn-danger" %>
           </div>
           <div class="right-header-detail">
-            <p>Jack Clerk</p>
-            <span>already 19 messages </span>
+            <% if @conversation.expert.id == current_user.id %>
+              <p><%= @conversation.newbie.email %></p>
+            <% else %>
+              <p><%= @conversation.expert.email %></p>
+            <% end %>
+          </div>
+          <div class="col-md-12 left-header">
           </div>
         </div>
       </div>
@@ -31,9 +43,11 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12 right-chat-textbox" style="height: 30%">
-          <textarea class="form-control" id="form-message"></textarea>
-        </div>
+        <% unless @conversation.done %>
+          <div class="col-md-12 right-chat-textbox" id="chat-form">
+            <textarea class="form-control" id="form-message"></textarea>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
