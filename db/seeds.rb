@@ -17,3 +17,5 @@ requests = []
                  bill: 100, status: rand(1...3), user_id: 1)
 end
 Request.import! requests
+
+User.first.diplomas.create certification:"abc"

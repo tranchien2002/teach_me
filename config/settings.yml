@@ -9,3 +9,5 @@ show_limit:
 diploma:
   certification:
     minimum: 10
+message:
+  for_display: 50

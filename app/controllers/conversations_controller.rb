@@ -4,13 +4,13 @@ class ConversationsController < ApplicationController
 
   def show
     @conversation = Conversation.find(params[:id])
+    @messages = @conversation.messages
     redirect_to request.referrer || root_url if @conversation.nil?
     authority_conversation! current_user, @conversation
   end
 
   def create
-    conversation = Conversation.new(newbie_id: current_user.id, expert_id: params[:applier_id],
-                                    request_id: params[:request_id])
+    conversation = Conversation.new(newbie_id: current_user.id, expert_id: params[:applier_id], request_id: params[:request_id])
     if conversation.save
       noti = current_user.send_notifications.create(event: t("views.conversation.notification"), receiver_id: conversation.expert_id, object_type: "conversation", object_id: conversation.id)
       ActionCable.server.broadcast "notification_conversation_channel",

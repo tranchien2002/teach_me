@@ -1,0 +1,19 @@
+<li id="<%= @conversation.id %>">
+  <% if message.is_message?(current_user) %>
+    <div class="rightside-right-chat">
+      <span>
+        <i class="fa fa-circle" aria-hidden="true"></i><%= message.user.name %>:
+        <small><%= message.created_at %></small>
+      </span><br><br>
+      <p><%= message.content %></p>
+    </div>
+  <% else %>
+    <div class="rightside-left-chat">
+      <span>
+        <i class="fa fa-circle" aria-hidden="true"></i><%= message.user.name %>:
+        <small><%= message.created_at %></small>
+      </span><br><br>
+      <p><%= message.content %></p>
+    </div>
+  <% end %>
+</li>

@@ -14,7 +14,6 @@
       <div class="row">
         <div class="col-md-12 right-header">
           <div class="right-header-img">
-            <!--<img src="businessman.png">-->
             <%= image_tag("businessman.png") %>
           </div>
           <div class="right-header-detail">
@@ -23,93 +22,19 @@
           </div>
         </div>
       </div>
+      <p class="hidden" id="conversation-id"><%= @conversation.id %></p>
       <div class="row">
         <div class="col-md-12 right-header-contentChat">
-          <ul>
-            <li>
-              <div class="rightside-left-chat">
-                <span><i class="fa fa-circle" aria-hidden="true"></i> joi chak <small>10:00 AM,Today</small> </span><br><br>
-                <p>Lorem ipsum dolor sit ameeserunt mollit anim id est laborum.
-                  Lorem ipsum dolor sit ameeserunt mollit anim mollit anim laborum.
-                  Lorem ipsum dolor sit ameeserunt mollit anim id est laborum.</p>
-              </div>
-            </li>
-            <li>
-              <div class="rightside-right-chat">
-                <span> <small>10:00 AM,Today</small>  nik minaj <i class="fa fa-circle" aria-hidden="true"></i></span><br><br>
-                <p>Lorem ipsum dolor sit ameeserunt mollit anim id est laborum.
-                  Lorem ipsum dolor sit ameeserunt mollit anim id est laborum.</p>
-              </div>
-            </li>
-            <li>
-              <div class="rightside-left-chat">
-                <span><i class="fa fa-circle" aria-hidden="true"></i> joi chak <small>10:00 AM,Today</small> </span><br><br>
-                <p>Lorem ipsum dolor sit ameeserunt mollit anim id est laborum.
-                  Lorem ipsum dolor sit ameeserunt mollit anim mollit anim laborum.
-                  Lorem ipsum dolor sit ameeserunt mollit anim id est laborum.</p>
-              </div>
-            </li>
-            <li>
-              <div class="rightside-right-chat">
-                <span> <small>10:00 AM,Today</small>  nik minaj <i class="fa fa-circle" aria-hidden="true"></i></span><br><br>
-                <p>Lorem ipsum dolor sit ameeserunt mollit anim id est laborum.
-                  Lorem ipsum dolor sit ameeserunt mollit anim id est laborum.</p>
-              </div>
-            </li>
-            <li>
-              <div class="rightside-left-chat">
-                <span><i class="fa fa-circle" aria-hidden="true"></i> joi chak <small>10:00 AM,Today</small> </span><br><br>
-                <p>Lorem ipsum dolor sit ameeserunt mollit anim id est laborum.
-                  Lorem ipsum dolor sit ameeserunt mollit anim mollit anim laborum.
-                  Lorem ipsum dolor sit ameeserunt mollit anim id est laborum.</p>
-              </div>
-            </li>
-            <li>
-              <div class="rightside-right-chat">
-                <span> <small>10:00 AM,Today</small>  nik minaj <i class="fa fa-circle" aria-hidden="true"></i></span><br><br>
-                <p>Lorem ipsum dolor sit ameeserunt mollit anim id est laborum.
-                  Lorem ipsum dolor sit ameeserunt mollit anim id est laborum.</p>
-              </div>
-            </li>
-            <li>
-              <div class="rightside-left-chat">
-                <span><i class="fa fa-circle" aria-hidden="true"></i> joi chak <small>10:00 AM,Today</small> </span><br><br>
-                <p>Lorem ipsum dolor sit ameeserunt mollit anim id est laborum.
-                  Lorem ipsum dolor sit ameeserunt mollit anim mollit anim laborum.
-                  Lorem ipsum dolor sit ameeserunt mollit anim id est laborum.</p>
-              </div>
-            </li>
-            <li>
-              <div class="rightside-right-chat">
-                <span> <small>10:00 AM,Today</small>  nik minaj <i class="fa fa-circle" aria-hidden="true"></i></span><br><br>
-                <p>Lorem ipsum dolor sit ameeserunt mollit anim id est laborum.
-                  Lorem ipsum dolor sit ameeserunt mollit anim id est laborum.</p>
-              </div>
-            </li>
-            <li>
-              <div class="rightside-left-chat">
-                <span><i class="fa fa-circle" aria-hidden="true"></i> joi chak <small>10:00 AM,Today</small> </span><br><br>
-                <p>Lorem ipsum dolor sit ameeserunt mollit anim id est laborum.
-                  Lorem ipsum dolor sit ameeserunt mollit anim mollit anim laborum.
-                  Lorem ipsum dolor sit ameeserunt mollit anim id est laborum.</p>
-              </div>
-            </li>
-            <li>
-              <div class="rightside-right-chat">
-                <span> <small>10:00 AM,Today</small>  nik minaj <i class="fa fa-circle" aria-hidden="true"></i></span><br><br>
-                <p>Lorem ipsum dolor sit ameeserunt mollit anim id est laborum.
-                  Lorem ipsum dolor sit ameeserunt mollit anim id est laborum.</p>
-              </div>
-            </li>
+          <ul id="list-message">
+            <%= render partial: "messages/message", collection: @messages %>
           </ul>
         </div>
       </div>
       <div class="row">
         <div class="col-md-12 right-chat-textbox" style="height: 30%">
-          <textarea class="form-control"></textarea>
+          <textarea class="form-control" id="form-message"></textarea>
         </div>
       </div>
     </div>
   </div>
 </div>
-<%= javascript_include_tag "conversation_message" %>
