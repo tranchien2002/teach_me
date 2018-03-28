@@ -18,7 +18,6 @@ $(document).ready(function() {
           })
         }
         if(data.applier_destroy){
-            console.log(data.applier_destroy);
           $("#user-apply-" + data.applier_destroy).remove();
         }
       }

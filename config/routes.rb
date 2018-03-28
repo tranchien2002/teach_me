@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :diplomas, only: [ :create, :destroy]
   resources :conversations, only: [:new ,:create, :show]
   put "close_conversation", to: "conversations#close"
+  resources :messages, only: [:create]
 
   mount ActionCable.server, at: '/cable'
   mount RailsAdmin::Engine => "/admin", as: :rails_admin
