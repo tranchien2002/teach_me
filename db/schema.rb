@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20180315161216) do
 
   create_table "notifications", force: :cascade do |t|
     t.string "event"
+    t.string "object_type"
     t.integer "receiver_id"
     t.integer "sender_id"
     t.integer "object_id"

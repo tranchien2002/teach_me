@@ -94,6 +94,8 @@ vi:
         create_fail: "khong tao moi duoc"
         destroy_fail: "khong xoa duoc"
         confirm: "Bạn chắc chắn muốn xóa không?"
+    conversation:
+      notification: "Đã tạo phòng chat"
 
   controllers:
     requests:
