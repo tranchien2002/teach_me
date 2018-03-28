@@ -12,6 +12,11 @@ class ConversationsController < ApplicationController
     conversation = Conversation.new(newbie_id: current_user.id, expert_id: params[:applier_id],
                                     request_id: params[:request_id])
     if conversation.save
+      noti = current_user.send_notifications.create(event: t("views.conversation.notification"), receiver_id: conversation.expert_id, object_type: "conversation", object_id: conversation.id)
+      ActionCable.server.broadcast "notification_conversation_channel",
+                                   conversation_id: conversation.id,
+                                   notification: render_notification(noti),
+                                   owner_conversation: conversation.expert_id
       User.transaction do
         users_in_conversation conversation
       end
@@ -44,4 +49,9 @@ class ConversationsController < ApplicationController
     conversation.newbie.update_attributes! free: true
     conversation.expert.update_attributes! free: true
   end
+
+  def render_notification notification
+  render_to_string partial: "notifications/notification", locals: {notification: notification}
+  end
+
 end

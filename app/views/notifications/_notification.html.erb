@@ -2,7 +2,11 @@
   <div class="col-md-3 col-sm-3 col-xs-3"><div class="notify-img"><img src="http://placehold.it/45x45" alt=""></div></div>
   <div class="col-md-9 col-sm-9 col-xs-9 pd-l0"><a href=""><%= notification.sender.email %></a><a href=""></a><a href="" class="rIcon"><i class="fa fa-dot-circle-o"></i></a>
     <p><%= notification.event %></p>
-    <p> <%= link_to t("views.header.rederect_to"),request_path(notification.object_id) %></p>
+    <% if notification.object_type == "request" %>
+      <p> <%= link_to t("views.layouts.header.redirect_to"),request_path(notification.object_id) %></p>
+    <% else %>
+      <p> <%= link_to t("views.layouts.header.redirect_to"),conversation_path(notification.object_id) %></p>
+    <% end %>
     <p class="time"><%= notification.created_at %></p>
   </div>
 </li>
