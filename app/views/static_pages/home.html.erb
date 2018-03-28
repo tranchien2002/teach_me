@@ -11,9 +11,9 @@
         </div>
         <div class="popular-jobs">
           <b>Popular Keywords: </b>
-          <a href="#">Web Design</a>
-          <a href="#">Manager</a>
-          <a href="#">Programming</a>
+          <% @hot_topics.each do |t| %>
+            <%= link_to t.topic, root_url(topic: t.topic), class: "hot-topic", remote: true  %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@
 </div>
 </div>
 <!-- Find Job Section Start -->
-<section class="find-job section">
+<section class="find-job section" id="request-section">
   <div class="container">
     <h2 class="section-title">Hot Jobs</h2>
     <div class="row">
@@ -411,3 +411,4 @@
     </div>
   </div>
 </div>
+<%= javascript_include_tag "home" %>

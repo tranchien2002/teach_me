@@ -21,15 +21,14 @@ class AppliesController < ApplicationController
 
   def destroy
     apply = Apply.find_by(id: params[:id])
-    applier_id = apply.user_id
-    if apply.nil? || current_user.id != applier_id
+    if apply.nil? || current_user.id != apply.user_id
       flash[:danger] = t "controllers.applies.destroy.delete_denied"
       redirect_to request.referrer || root_url
     else
       current_request = apply.request
       noti = current_user.send_notifications.create(event: t("views.requests.notifications.delete") + current_request.header, receiver_id: current_request.user_id, object_type: "request", object_id: current_request.id)
       if apply.destroy!
-        ActionCable.server.broadcast "notification_apply_channel", applier_destroy: applier_id,
+        ActionCable.server.broadcast "notification_apply_channel", applier_destroy: apply.user_id,
                                      request_id: current_request.id,notification: render_notification(noti),
                                      owner_request: current_request.user_id
       end

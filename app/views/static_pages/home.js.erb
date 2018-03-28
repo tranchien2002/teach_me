@@ -1,2 +1,3 @@
 $("#requests").html('<%= j render(@requests) %>')
 $("#paginate").html('<%= j paginate(@requests, remote: true) %>')
+$("#request-section")[0].scrollIntoView();
