@@ -2,6 +2,7 @@ class Apply < ApplicationRecord
   belongs_to :user
   belongs_to :request
   validate :own_request
+  validate :request_done?
   validates_uniqueness_of :request_id, scope: :user_id, message: I18n.t("controllers.applies.create.error.applied")
 
   def self.find_apply request_id, user_id
@@ -11,5 +12,9 @@ class Apply < ApplicationRecord
   private
   def own_request
     errors.add(:base, I18n.t("controllers.applies.create.error.owner")) if request.is_user?self.user_id
+  end
+
+  def request_done?
+    errors.add(:base, I18n.t("controllers.applies.create.error.done")) if request.Done?
   end
 end

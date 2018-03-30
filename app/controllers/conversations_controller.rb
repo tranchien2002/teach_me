@@ -28,11 +28,25 @@ class ConversationsController < ApplicationController
     end
   end
 
+  def update
+    conversation = Conversation.find_by id: params[:id]
+    if conversation.present? && params[:rate_point]
+      conversation.update_attributes rate_point: params[:rate_point]
+      respond_to do |format|
+        format.js
+      end
+    end
+  end
+
   def close
     conversation = Conversation.find_by id: params[:id]
     redirect_to request.referrer || root_url if conversation.nil?
     if close_conversation conversation
-      redirect_to root_url
+      if conversation.newbie_id == current_user.id
+        redirect_to request.referrer || root_url
+      else
+        redirect_to root_url
+      end
     end
   end
 

@@ -38,6 +38,7 @@
 </section>
 <div class="container">
   <div class="row">
+    <% unless @request.is_done? %>
     <div class="col-6 col-md-4" >
       <h5><b><%= t "views.requests.show.appliers" %></b></h5>
         <div style=" word-wrap: break-word;">
@@ -48,6 +49,7 @@
           </ul>
         </div>
     </div>
+    <% end %>
     <div class="col-12 col-md-8">
       <h5><b><%= t "views.requests.show.comments" %></b></h5>
     </div>
