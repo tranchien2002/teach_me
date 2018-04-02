@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :requests
   resources :applies, only: [:create, :destroy]
   resources :diplomas, only: [ :create, :destroy]
-  resources :conversations, only: [:new ,:create, :show]
+  resources :conversations, only: [:new ,:create, :show, :update]
   put "close_conversation", to: "conversations#close"
   resources :messages, only: [:create]
 

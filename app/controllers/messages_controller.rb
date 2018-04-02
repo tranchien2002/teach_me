@@ -7,11 +7,17 @@ class MessagesController < ApplicationController
 
   def create
     message = current_user.messages.build messages_params
+    if message.conversation.newbie? message.user_id
+      notify_to = message.conversation.expert.id
+    else
+      notify_to = message.conversation.newbie.id
+    end
     if message.save
       ActionCable.server.broadcast "conversation_channel",
                                    content: message.content,
                                    created_at: message.created_at,
-                                   username: message.user.name
+                                   username: message.user.name,
+                                   notify_to: notify_to
     else
       render :index
     end

@@ -95,11 +95,14 @@ vi:
         destroy_fail: "khong xoa duoc"
         confirm: "Bạn chắc chắn muốn xóa không?"
     conversation:
-      notification: "ĐÃ TẠO PHÒNG CHAT"
+      notification-create: "ĐÃ TẠO PHÒNG CHAT"
+      notification-close: "Cuộc hội thoại của bạn đã được đóng lại"
       show:
         content: "Nội dung:"
         close: "Đóng"
         confirm: "Bạn chắc chắn đóng cuộc hội thoại này chứ ?"
+        rate: "Điểm đánh gía: "
+        rating: "Đánh giá cuộc trò chuyện: "
   controllers:
     requests:
       create:
@@ -124,6 +127,7 @@ vi:
         error:
           owner: "Bạn không thể tự ứng tuyển"
           applied: "Bạn đã ứng tuyển"
+          done: "Yêu cầu này đã hết hạn tuyển"
       destroy:
         delete_denied: "Bạn không thể xóa ứng tuyển"
     diploma:

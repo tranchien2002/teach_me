@@ -11,8 +11,17 @@
         <ul>
           <li>
             <div class="chat-left-detail">
-              <div id="content-conversation"><h2><i class="fa fa-info-circle"></i> <%= t "views.conversation.show.content" %> </h2> <%= @conversation.request.content %></div>
+              <div id="content-conversation"><h2><i class="fa fa-info-circle"></i> <%= t "views.conversation.show.content" %>
+              </h2> <%= @conversation.request.content %></div>
             </div>
+          </li>
+          <li>
+            <% if @conversation.rate_point.present? %>
+              <div>
+                <div id="content-conversation"><h2><i class="fa fa-star"></i> <%= t "views.conversation.show.rate" %> </h2>
+                  <h2><%= @conversation.rate_point %></h2></div>
+              </div>
+            <% end %>
           </li>
         </ul>
       </div>
@@ -52,3 +61,7 @@
     </div>
   </div>
 </div>
+<p class="hidden" id="conversation-id"><%= @conversation.id %></p>
+<% if @conversation.done? && @conversation.newbie_id == current_user.id && @conversation.rate_point.nil?%>
+  <%= render "conversations/rating" %>
+<% end %>

@@ -95,11 +95,14 @@ en:
         destroy_fail: "Destroy fail"
         confirm: "You sure?"
     conversation:
-      notification: "CREATED CONVERSATION"
+      notification-create: "CREATED CONVERSATION"
+      notification-close: "Your conversation has closed"
       show:
         content: "Content:"
         close: "Close"
         confirm: "Are you sure ?"
+        rate: "Rating point: "
+        rating: "Rating this conversation: "
   controllers:
     requests:
       create:
@@ -124,6 +127,7 @@ en:
         error:
           owner: "You can not apply your request"
           applied: "You have applied"
+          done: "Request expired"
       destroy:
         delete_denied: "You can't delete this apply"
     diploma:

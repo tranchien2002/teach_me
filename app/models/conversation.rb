@@ -17,6 +17,11 @@ class Conversation < ApplicationRecord
     request.update_attributes! status: :Done
   end
 
+  def newbie? user_id
+    return true if newbie.id == user_id
+    false
+  end
+
   private
   def accept_self?
     errors.add(:base, I18n.t("controllers.requests.show.error.error_owner")) if expert_id == newbie_id

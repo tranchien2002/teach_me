@@ -4,7 +4,7 @@
     <p><%= notification.event %></p>
     <% if notification.object_type == "request" %>
       <p> <%= link_to t("views.layouts.header.redirect_to"),request_path(notification.object_id), class: "btn btn-success" %></p>
-    <% else %>
+    <% elsif notification.object_type == "conversation" %>
       <p> <%= link_to t("views.layouts.header.redirect_to"),conversation_path(notification.object_id), class: "btn btn-success" %></p>
     <% end %>
     <p class="time"><%= notification.created_at %></p>

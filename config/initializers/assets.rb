@@ -11,6 +11,7 @@ Rails.application.config.assets.precompile += %w( validate_request.js )
 Rails.application.config.assets.precompile += %w( validate_diploma.js )
 Rails.application.config.assets.precompile += %w( conversation_message.js )
 Rails.application.config.assets.precompile += %w( home.js )
+Rails.application.config.assets.precompile += %w( conversation.js )
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets

@@ -15,6 +15,13 @@ $(document).ready(function() {
            '<p>' + data.content + '</p>' +
            '</div>' + '</li>'
           );
+
+        }
+        if (data.notify_to){
+          $("#conversation-" + data.notify_to).addClass("notifying");
+          $("#conversation-" + data.notify_to).on("click", function () {
+              $("#conversation-"+ data.notify_to).removeClass("notifying")
+          })
         }
       },
     });
